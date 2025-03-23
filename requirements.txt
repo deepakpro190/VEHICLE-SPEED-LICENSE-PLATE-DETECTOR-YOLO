@@ -1,0 +1,10 @@
+opencv-python
+torch
+numpy
+pytesseract
+ultralytics
+tqdm
+csv
+collections
+string
+streamlit
