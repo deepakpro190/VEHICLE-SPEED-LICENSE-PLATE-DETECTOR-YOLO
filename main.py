@@ -149,7 +149,7 @@ def write_csv(speeding_vehicles, output_path):
 
 
 
-def run_detection():
+def run_detection(VIDEO_INPUT,VIDEO_OUTPUT,CSV_OUTPUT):
     cap = cv2.VideoCapture(VIDEO_INPUT)
     if not cap.isOpened():
         print(f"❌ Error: Could not open video file {VIDEO_INPUT}")
@@ -211,5 +211,5 @@ def run_detection():
     
     cap.release()
     out.release()
-    write_csv(speeding_vehicles,"dataset_1.csv")
+    write_csv(speeding_vehicles,CSV_OUTPUT)
     print(f"✅ Processing complete. Output saved to {VIDEO_OUTPUT}")
