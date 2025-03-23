@@ -4,5 +4,4 @@ numpy
 pytesseract
 ultralytics
 tqdm
-string
 streamlit
