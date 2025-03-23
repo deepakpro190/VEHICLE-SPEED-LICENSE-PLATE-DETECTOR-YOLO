@@ -15,7 +15,7 @@ st.title("🚗 Speeding Vehicle Detection with License Plate Recognition")
 # ✅ Hugging Face Model Download
 @st.cache_resource
 def load_yolo_models():
-    plate_model_path = hf_hub_download(repo_id="YOUR_USERNAME/my-yolo-plate-detect-model", filename="best.pt")
+    plate_model_path = hf_hub_download(repo_id="deepakpro190/my-yolo-plate-detect-model", filename="best.pt")
     return YOLO("yolov8n.pt"), YOLO(plate_model_path)
 
 vehicle_model, plate_model = load_yolo_models()
