@@ -1,7 +1,7 @@
 import cv2
 import torch
 import numpy as np
-import pytesseract
+
 from ultralytics import YOLO
 from collections import defaultdict, deque
 from tqdm import tqdm
@@ -12,6 +12,17 @@ import csv
 #VIDEO_OUTPUT = "output/23-03-2025_01.mp4" 
 #CSV_OUTPUT = "speeding_vehicles.csv" 
 from huggingface_hub import hf_hub_download
+
+import pytesseract
+import os
+
+# Set Tesseract path manually
+tesseract_path = "/usr/bin/tesseract"  # Default path on Linux (Streamlit Cloud)
+if os.path.exists(tesseract_path):
+    pytesseract.pytesseract.tesseract_cmd = tesseract_path
+else:
+    raise FileNotFoundError("Tesseract-OCR not found! Check system installation.")
+
 
 
 # Download YOLO weights from Hugging Face
