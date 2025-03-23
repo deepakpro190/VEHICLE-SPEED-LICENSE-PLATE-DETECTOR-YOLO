@@ -37,7 +37,7 @@ if uploaded_file:
     output_video_path = os.path.join(temp_dir.name, "output.mp4")
     csv_output_path = os.path.join(temp_dir.name, "speeding_vehicles.csv")
 
-    run_detection(input_video_path, output_video_path, csv_output_path, vehicle_model, plate_model)
+    run_detection(input_video_path, output_video_path, csv_output_path)
 
     st.success("✅ Processing complete!")
 
