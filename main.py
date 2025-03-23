@@ -13,15 +13,24 @@ import csv
 #CSV_OUTPUT = "speeding_vehicles.csv" 
 from huggingface_hub import hf_hub_download
 
-import pytesseract
 import os
+import subprocess
 
-# Set Tesseract path manually
-tesseract_path = "/usr/bin/tesseract"  # Default path on Linux (Streamlit Cloud)
-if os.path.exists(tesseract_path):
-    pytesseract.pytesseract.tesseract_cmd = tesseract_path
+# Check if Tesseract is installed
+tesseract_path = "/usr/bin/tesseract"
+tesseract_installed = os.path.exists(tesseract_path)
+
+if not tesseract_installed:
+    print("🚨 Tesseract-OCR is NOT installed! Checking system packages...")
+    try:
+        output = subprocess.check_output("apt list --installed | grep tesseract", shell=True).decode()
+        print("📌 Installed Tesseract versions:\n", output)
+    except subprocess.CalledProcessError:
+        print("❌ Tesseract is missing. Install it using `packages.txt`.")
+
 else:
-    raise FileNotFoundError("Tesseract-OCR not found! Check system installation.")
+    print("✅ Tesseract is installed at:", tesseract_path)
+
 
 
 
