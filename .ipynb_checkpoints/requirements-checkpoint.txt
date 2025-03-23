@@ -1,10 +1,3 @@
-opencv-python
-torch
-numpy
-pytesseract
-ultralytics
-tqdm
-csv
-collections
-string
-streamlit
+version https://git-lfs.github.com/spec/v1
+oid sha256:dcf849af339320109c9cebd3756b17ae1ddb7c2707e4a82ee94bf8d3d142d75c
+size 87

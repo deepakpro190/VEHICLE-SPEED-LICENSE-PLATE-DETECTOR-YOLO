@@ -1,25 +1,3 @@
-name: vlpr-env
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - bzip2=1.0.8=h2466b09_7
-  - ca-certificates=2024.12.14=h56e8100_0
-  - libffi=3.4.2=h8ffe710_5
-  - liblzma=5.6.3=h2466b09_1
-  - liblzma-devel=5.6.3=h2466b09_1
-  - libsqlite=3.48.0=h67fdade_1
-  - libzlib=1.3.1=h2466b09_2
-  - openssl=3.4.0=ha4e3fda_1
-  - pip=24.3.1=pyh8b19718_0
-  - python=3.8.20=hfaddaf0_2_cpython
-  - setuptools=75.3.0=pyhd8ed1ab_0
-  - tk=8.6.13=h5226925_1
-  - ucrt=10.0.22621.0=h57928b3_1
-  - vc=14.3=h5fd82a7_24
-  - vc14_runtime=14.42.34433=h6356254_24
-  - vs2015_runtime=14.42.34433=hfef2bbc_24
-  - wheel=0.45.1=pyhd8ed1ab_0
-  - xz=5.6.3=h208afaa_1
-  - xz-tools=5.6.3=h2466b09_1
-prefix: C:\Users\dell\anaconda3\envs\vlpr-env
+version https://git-lfs.github.com/spec/v1
+oid sha256:afb521561248b893ff890a971bbec72d9079bb72c5381988e6fc39ab53e92a6c
+size 740
