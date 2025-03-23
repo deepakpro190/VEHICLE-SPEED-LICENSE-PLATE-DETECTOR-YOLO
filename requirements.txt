@@ -6,4 +6,3 @@ ultralytics
 tqdm
 streamlit
 huggingface_hub
-tesseract-ocr
