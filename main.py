@@ -1,7 +1,7 @@
 import cv2
 import torch
 import numpy as np
-
+import pytesseract
 from ultralytics import YOLO
 from collections import defaultdict, deque
 from tqdm import tqdm
@@ -12,26 +12,6 @@ import csv
 #VIDEO_OUTPUT = "output/23-03-2025_01.mp4" 
 #CSV_OUTPUT = "speeding_vehicles.csv" 
 from huggingface_hub import hf_hub_download
-
-import os
-import subprocess
-
-# Check if Tesseract is installed
-tesseract_path = "/usr/bin/tesseract"
-tesseract_installed = os.path.exists(tesseract_path)
-
-if not tesseract_installed:
-    print("🚨 Tesseract-OCR is NOT installed! Checking system packages...")
-    try:
-        output = subprocess.check_output("apt list --installed | grep tesseract", shell=True).decode()
-        print("📌 Installed Tesseract versions:\n", output)
-    except subprocess.CalledProcessError:
-        print("❌ Tesseract is missing. Install it using `packages.txt`.")
-
-else:
-    print("✅ Tesseract is installed at:", tesseract_path)
-
-
 
 
 # Download YOLO weights from Hugging Face
@@ -169,7 +149,7 @@ def write_csv(speeding_vehicles, output_path):
 
 
 
-def run_detection(VIDEO_INPUT,VIDEO_OUTPUT,CSV_OUTPUT):
+def run_detection(VIDEO_INPUT, VIDEO_OUTPUT, csv_output_path, vehicle_model, plate_model):
     cap = cv2.VideoCapture(VIDEO_INPUT)
     if not cap.isOpened():
         print(f"❌ Error: Could not open video file {VIDEO_INPUT}")
@@ -231,5 +211,5 @@ def run_detection(VIDEO_INPUT,VIDEO_OUTPUT,CSV_OUTPUT):
     
     cap.release()
     out.release()
-    write_csv(speeding_vehicles,CSV_OUTPUT)
+    write_csv(speeding_vehicles,csv_output_path)
     print(f"✅ Processing complete. Output saved to {VIDEO_OUTPUT}")
