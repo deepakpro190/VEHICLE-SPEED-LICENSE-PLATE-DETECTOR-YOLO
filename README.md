@@ -1,6 +1,3 @@
-Here’s an **updated README.md** file incorporating **speed detection, perspective transformation, and license plate compliance features**:
-
----
 
 # **🚗 Vehicle Speed & License Plate Detector using YOLO**  
 
